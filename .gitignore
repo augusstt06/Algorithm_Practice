@@ -11,6 +11,9 @@
 .vercel
 .DS_Store
 algorithm/.idea
+.idea
+.idea/
+/.idea
 
 # Icon must end with two \r
 Icon

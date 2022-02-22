@@ -11,26 +11,26 @@
 # 3 4
 
 # 예제 입력1
-# visited = [False] * 5
-# vertex_graph = [
-#     [4, 5, 1],
-#     [1, 2],
-#     [1, 3],
-#     [1, 4],
-#     [2, 4],
-#     [3, 4]
-# ]
+visited = [False] * 5
+vertex_graph = [
+    [4, 5, 1],
+    [1, 2],
+    [1, 3],
+    [1, 4],
+    [2, 4],
+    [3, 4]
+]
 
 # 예제 입력2
-visited = [False] * 6
-vertex_graph = [
-    [5,5,3],
-    [5,4],
-    [5,2],
-    [1,2],
-    [3,4],
-    [3,1]
-]
+# visited = [False] * 6
+# vertex_graph = [
+#     [5,5,3],
+#     [5,4],
+#     [5,2],
+#     [1,2],
+#     [3,4],
+#     [3,1]
+# ]
 
 
 # 예제 입력3
@@ -39,10 +39,10 @@ vertex_graph = [
 #     [1000, 1, 1000],
 #     [999, 1000]
 # ]
-
-n = vertex_graph[0][0]
-m = vertex_graph[0][1]
-v = vertex_graph[0][2]
+#
+# n = vertex_graph[0][0]
+# m = vertex_graph[0][1]
+# v = vertex_graph[0][2]
 
 connect_route = []
 for i in range(n+1):
@@ -64,3 +64,5 @@ def dfs(connect_route, v, visited):
 
 
 dfs(connect_route, v, visited)
+
+
