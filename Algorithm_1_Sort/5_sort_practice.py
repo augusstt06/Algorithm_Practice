@@ -69,10 +69,34 @@ for v in range(num):
 # print(insert_sort(num, arr))
 
 # 4) 퀵 정렬
-def quick_sort(num, arr):
-    for i in range(num):
-        print(i)
-    return "ss"
+
+def quick_sort(arr, start, end):
+    if start >= end:
+        return
+
+    pivot = start
+    i = start + 1
+    j = end
+
+    while i <= j:
+        while i <= end and arr[i] <= arr[pivot]:
+            i += 1
+        while j > start and arr[j] >= arr[pivot]:
+            j -= 1
+
+        if i > j:
+            temp = arr[j]
+            arr[j] = arr[pivot]
+            arr[pivot] = temp
+        else:
+            temp = arr[i]
+            arr[i] = arr[j]
+            arr[j] = temp
+
+    quick_sort(arr, j+1, end)
+
+    quick_sort(arr, start, j-1)
 
 
-print(quick_sort(num,arr))
+
+print(quick_sort(arr, 0, len(arr)-1))
