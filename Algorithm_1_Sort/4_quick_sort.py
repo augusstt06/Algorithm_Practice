@@ -37,10 +37,12 @@ def f_quick(arr, start, end):
     # i와 j가 서로 엇갈릴 때 까지 반복 한다. ==> 엇갈리면 이 while문을 탈출한다. ( 5)의 조건 )
     while i <= j:
         # key 값 보다 큰 i값을 만날 때 까지 /// i <= end 의 조건은 큰 값을 탐색하다 시작했던 요소를 넘어서 탐색하면 안되기 때문에 설정
+
         while i <= end and arr[i] <= arr[key]:
             # 오른쪽으로 이동하며 탐색한다
             i += 1
         # key 값 보다 작은 j값을 만날 때 까지 /// j > start 의 조건은 작은 값을 탐색하다 시작했던 요소를 넘어서 탐색하면 안되기 떄문에 설정
+
         while j > start and arr[j] >= arr[key]:
             # 왼쪽으로 이동하며 탐색한다.
             j -= 1
