@@ -1,7 +1,7 @@
 def quick_sort(arr, start, end):
     # 만약 원소가 1개라면 그냥 리턴
-    if start >= end:
-        return arr
+    # if start >= end:
+    #     return arr
     # 피벗 값, 왼오 시작점, 오왼 시작 점을 정한다.
     pivot = start
     i = start + 1

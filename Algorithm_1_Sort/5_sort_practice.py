@@ -72,7 +72,7 @@ for v in range(num):
 
 def quick_sort(arr, start, end):
     if start >= end:
-        return
+        return print(arr,start, end,'dd')
 
     pivot = start
     i = start + 1
@@ -97,6 +97,6 @@ def quick_sort(arr, start, end):
 
     quick_sort(arr, start, j-1)
 
-
+    return arr
 
 print(quick_sort(arr, 0, len(arr)-1))
