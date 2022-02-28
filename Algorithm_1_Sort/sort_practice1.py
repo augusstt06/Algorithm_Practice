@@ -1,4 +1,4 @@
-# 정렬 예제
+# 정렬 예제 1
 
 # 백준 2750번
 # 첫째 줄에 수의 갯수 (1<= n <=1000), 둘째 줄 부터는 숫자가 주어진다
@@ -72,7 +72,7 @@ for v in range(num):
 
 def quick_sort(arr, start, end):
     if start >= end:
-        return print(arr,start, end,'dd')
+        return
 
     pivot = start
     i = start + 1
@@ -100,3 +100,10 @@ def quick_sort(arr, start, end):
     return arr
 
 print(quick_sort(arr, 0, len(arr)-1))
+
+# 5
+# 10
+# 14
+# 12
+# 51
+# 22

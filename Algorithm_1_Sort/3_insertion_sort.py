@@ -19,21 +19,21 @@
 # 삽입 정렬 구현 (오름 차순으로 구현한다)왼쪽 시작점보다
 
 def f_insertion(arr):
-    for i in range(len(arr)-1):
+    for i in range(len(arr)):
         # 정렬을 실시할 해당 요소의 인덱스를 j라고 설정한다
         j = i
         #  j를 1씩 빼가면서 (정렬되었다고 가정하는 현재 요소i 기준왼쪽의 범위를 돌면서) 왼쪽 값이 오른쪽값보다 크다면 자리를 바꿔주면서 진행한다.
-        while j >= 0 and arr[j] > arr[j + 1]:
+        while j > 0 and arr[j] < arr[j - 1]:
             temp = arr[j]
-            arr[j] = arr[j + 1]
-            arr[j + 1] = temp
+            arr[j] = arr[j - 1]
+            arr[j - 1] = temp
             j -= 1
     # 최종적으로 나온 arr를 리턴한다.
     return arr
 
 
-# arr = [1, 10, 5, 8, 7, 6, 4, 3, 2, 9]
+arr = [1, 10, 5, 8, 7, 6, 4, 3, 2, 9]
 # arr = [11, 12, 15, 16, 13, 18, 14, 17, 20, 19]
-arr = [16, 7, 12, 11, 8, 10, 9, 15, 13, 14]
+# arr = [16, 7, 12, 11, 8, 10, 9, 15, 13, 14]
 
 print(f_insertion(arr))
