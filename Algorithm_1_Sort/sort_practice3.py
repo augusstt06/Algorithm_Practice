@@ -14,13 +14,7 @@ for v in range(num):
     arr.append(int(sys.stdin.readline().strip()))
 
 
-# 5
-# 5
-# 4
-# 1
-# 2
-# 3
-# 선택 정렬
+# 1) 선택 정렬
 # def select_sort(arr):
 #     for i in range(len(arr)):
 #         min_num = 99999999
@@ -51,7 +45,7 @@ for v in range(num):
 
 # print(select_sort(arr))
 
-# 버블 정렬
+# 2) 버블 정렬
 # def bubble_sort(arr):
 #     for i in range(len(arr)):
 #         for j in range(len(arr)-(i+1)):
@@ -64,7 +58,7 @@ for v in range(num):
 # print(bubble_sort(arr))
 
 
-# 삽입 정렬
+# 3) 삽입 정렬
 # def insert_sort(arr):
 #     for i in range(1, len(arr)):
 #         j = i
@@ -77,32 +71,73 @@ for v in range(num):
 #
 # print(insert_sort(arr))
 
-# 퀵 정렬
-def quick_sort(arr, start, end):
-    if start >= end:
-        return
-    pivot = start
-    i = start + 1
-    j = end
-    while i <= j :
-        while i <= end and arr[i] <= arr[pivot]:
-            i += 1
-        while j > start and arr[j] >= arr[pivot]:
-            j -= 1
+# 4) 퀵 정렬
+# def quick_sort(arr, start, end):
+#     if start >= end:
+#         return
+#     pivot = start
+#     i = start + 1
+#     j = end
+#     while i <= j :
+#         while i <= end and arr[i] <= arr[pivot]:
+#             i += 1
+#         while j > start and arr[j] >= arr[pivot]:
+#             j -= 1
+#
+#         if i > j:
+#             temp = arr[j]
+#             arr[j] = arr[pivot]
+#             arr[pivot] = temp
+#         else:
+#             temp = arr[i]
+#             arr[i] = arr[j]
+#             arr[j] = temp
+#     quick_sort(arr, start, j - 1)
+#     quick_sort(arr, j + 1, end)
+#
+#     return arr
+#
+#
+# print(quick_sort(arr,0, len(arr)-1))
+#
 
-        if i > j:
-            temp = arr[j]
-            arr[j] = arr[pivot]
-            arr[pivot] = temp
+# 5) 병합 정렬
+def merge_sort(arr):
+    if len(arr) < 2:
+        return
+
+    middle = len(arr) // 2
+    left_g = arr[:middle]
+    right_g = arr[middle:]
+
+    merge_sort(left_g)
+    merge_sort(right_g)
+
+    left_i = 0
+    right_i = 0
+    merge_i = 0
+
+    while left_i < len(left_g) and right_i < len(right_g):
+        if left_g[left_i] < right_g[right_i]:
+            arr[merge_i] = left_g[left_i]
+            left_i += 1
+            merge_i += 1
         else:
-            temp = arr[i]
-            arr[i] = arr[j]
-            arr[j] = temp
-    quick_sort(arr, start, j - 1)
-    quick_sort(arr, j + 1, end)
+            arr[merge_i] = right_g[right_i]
+            right_i += 1
+            merge_i += 1
+    while left_i < len(left_g):
+        arr[merge_i] = left_g[left_i]
+        merge_i += 1
+        left_i += 1
+    while right_i < len(right_g):
+        arr[merge_i] = right_g[right_i]
+        merge_i += 1
+        right_i += 1
 
     return arr
 
 
-print(quick_sort(arr,0, len(arr)-1))
+print(merge_sort(arr))
+
 

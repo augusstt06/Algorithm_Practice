@@ -70,40 +70,72 @@ for v in range(num):
 
 # 4) 퀵 정렬
 
-def quick_sort(arr, start, end):
-    if start >= end:
+# def quick_sort(arr, start, end):
+#     if start >= end:
+#         return
+#
+#     pivot = start
+#     i = start + 1
+#     j = end
+#
+#     while i <= j:
+#         while i <= end and arr[i] <= arr[pivot]:
+#             i += 1
+#         while j > start and arr[j] >= arr[pivot]:
+#             j -= 1
+#
+#         if i > j:
+#             temp = arr[j]
+#             arr[j] = arr[pivot]
+#             arr[pivot] = temp
+#         else:
+#             temp = arr[i]
+#             arr[i] = arr[j]
+#             arr[j] = temp
+#
+#     quick_sort(arr, j+1, end)
+#
+#     quick_sort(arr, start, j-1)
+#
+#     return arr
+#
+# print(quick_sort(arr, 0, len(arr)-1))
+
+# 5) 병합 정렬
+def merge_sort(arr):
+    if len(arr) < 2:
         return
+    middle = len(arr) // 2
+    left_g = arr[:middle]
+    right_g = arr[middle:]
 
-    pivot = start
-    i = start + 1
-    j = end
+    merge_sort(left_g)
+    merge_sort(right_g)
 
-    while i <= j:
-        while i <= end and arr[i] <= arr[pivot]:
-            i += 1
-        while j > start and arr[j] >= arr[pivot]:
-            j -= 1
+    left_index = 0
+    right_index = 0
+    merge_index = 0
 
-        if i > j:
-            temp = arr[j]
-            arr[j] = arr[pivot]
-            arr[pivot] = temp
+    while left_index < len(left_g) and right_index < len(right_g):
+        if left_g[left_index] < right_g[right_index]:
+            arr[merge_index] = left_g[left_index]
+            left_index += 1
+            merge_index += 1
         else:
-            temp = arr[i]
-            arr[i] = arr[j]
-            arr[j] = temp
+            arr[merge_index] = right_g[right_index]
+            right_index += 1
+            merge_index += 1
 
-    quick_sort(arr, j+1, end)
+    while left_index < len(left_g):
+        arr[merge_index] = left_g[left_index]
+        left_index += 1
+        merge_index += 1
 
-    quick_sort(arr, start, j-1)
-
+    while right_index < len(right_g):
+        arr[merge_index] = right_g[right_index]
+        right_index += 1
+        merge_index += 1
     return arr
 
-print(quick_sort(arr, 0, len(arr)-1))
 
-# 5
-# 10
-# 14
-# 12
-# 51
-# 22
+print(merge_sort(arr))
