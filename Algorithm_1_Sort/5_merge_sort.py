@@ -76,3 +76,4 @@ def merge_sort(arr):
 merge_sort(arr)
 
 print(arr)
+
