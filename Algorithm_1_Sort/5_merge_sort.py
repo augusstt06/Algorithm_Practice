@@ -32,6 +32,7 @@ def merge_sort(arr):
     merge_sort(right_group)
 
     # 리스트를 나누었다면, 나눈 그룹을 정렬 후 넣어야 하니 시작 인덱스 left, right를 설정한다.
+
     left = 0
     right = 0
     # 위에서 left, right 중에서 작은 것을 넣어야 하니 넣어야 할 list의 인덱스 now를 정한다.
@@ -39,6 +40,7 @@ def merge_sort(arr):
 
     # left, 또는 right의 리스트를 돌며 더 작은 것을 넣을 것
     # left, 또는 right 중 한 리스트를 모두 넣을 때 까지 밑의 while문을 돈다.
+
     while left < len(left_group) and right < len(right_group):
         # 만약 left의 원소가 right의 원소보다 작다면
         if left_group[left] < right_group[right]:
@@ -71,9 +73,10 @@ def merge_sort(arr):
         arr[now] = right_group[right]
         right += 1
         now += 1
+    return arr
 
 
-merge_sort(arr)
+print(merge_sort(arr))
 
-print(arr)
+# print(arr)
 

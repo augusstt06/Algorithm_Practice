@@ -28,12 +28,24 @@ def f_insertion(arr):
             arr[j] = arr[j - 1]
             arr[j - 1] = temp
             j -= 1
+        print(i)
+    # 최종적으로 나온 arr를 리턴한다.
+    return arr
+# def f_insertion(arr):
+#     for i in range(len(arr)):
+#         while i > 0 and arr[i] < arr[i - 1]:
+#             temp = arr[i]
+#             arr[i] = arr[i - 1]
+#             arr[i - 1] = temp
+#             i -= 1
+#         print(i)
     # 최종적으로 나온 arr를 리턴한다.
     return arr
 
 
-arr = [1, 10, 5, 8, 7, 6, 4, 3, 2, 9]
+# arr = [1, 10, 5, 8, 7, 6, 4, 3, 2, 9]
 # arr = [11, 12, 15, 16, 13, 18, 14, 17, 20, 19]
 # arr = [16, 7, 12, 11, 8, 10, 9, 15, 13, 14]
+arr = [10, 17, 0, 0, 3, 6, 18, 2]
 
 print(f_insertion(arr))

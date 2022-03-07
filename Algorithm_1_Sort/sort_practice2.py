@@ -119,3 +119,42 @@ def merge_sort(arr):
     return arr
 
 print(merge_sort(arr))
+
+def merge_sort(arr):
+    copy = arr
+    if len(arr) < 2:
+        return
+    middle = len(copy) // 2
+    left_g = copy[:middle]
+    right_g = copy[middle:]
+
+    merge_sort(left_g)
+    merge_sort(right_g)
+
+    left_index = 0
+    right_index = 0
+    merge_index = 0
+
+    while left_index < len(left_g) and right_index < len(right_g):
+        if left_g[left_index] < right_g[right_index]:
+            copy[merge_index] = left_g[left_index]
+            left_index += 1
+            merge_index += 1
+        else:
+            copy[merge_index] = right_g[right_index]
+            right_index += 1
+            merge_index += 1
+
+    while left_index < len(left_g):
+        copy[merge_index] = left_g[left_index]
+        left_index += 1
+        merge_index += 1
+
+    while right_index < len(right_g):
+        copy[merge_index] = right_g[right_index]
+        right_index += 1
+        merge_index += 1
+    return copy
+
+
+print(merge_sort(arr))
