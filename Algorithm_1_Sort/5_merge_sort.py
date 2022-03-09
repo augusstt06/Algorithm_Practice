@@ -78,5 +78,5 @@ def merge_sort(arr):
 
 print(merge_sort(arr))
 
-# print(arr)
+print(arr)
 
