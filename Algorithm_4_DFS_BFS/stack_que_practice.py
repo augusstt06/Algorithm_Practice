@@ -1,54 +1,54 @@
 # stack : 선입 후출
 
-stack = [5]
-
-stack.append(2)
-stack.append(3)
-stack.append(7)
-stack.pop()
-stack.append(1)
-stack.append(4)
-stack.pop()
-
-print(stack[::-1], '최상단 원소부터 출력')
-print(stack, '최하단 원소부터 출력')
+# stack = [5]
+#
+# stack.append(2)
+# stack.append(3)
+# stack.append(7)
+# stack.pop()
+# stack.append(1)
+# stack.append(4)
+# stack.pop()
+#
+# print(stack[::-1], '최상단 원소부터 출력')
+# print(stack, '최하단 원소부터 출력')
 
 # queue : 선입 선출
 
-from collections import deque
-
-queue = deque()
+# from collections import deque
+#
+# queue = deque()
 
 # 오른쪽 => 왼쪽 들어온다 생각하면 편함
 
-queue.append(5)
-queue.append(2)
-queue.append(3)
-queue.append(7)
-
-queue.popleft()
-
-queue.append(1)
-queue.append(4)
-
-queue.popleft()
-print(queue, '먼저 들어온 순서대로 출력')
-queue.reverse()
-print(queue, '나중에 들어온 원소부터 출력')
+# queue.append(5)
+# queue.append(2)
+# queue.append(3)
+# queue.append(7)
+#
+# queue.popleft()
+#
+# queue.append(1)
+# queue.append(4)
+#
+# queue.popleft()
+# print(queue, '먼저 들어온 순서대로 출력')
+# queue.reverse()
+# print(queue, '나중에 들어온 원소부터 출력')
 
 
 # 재귀 함수 => 종료 조건 필히 명시 :: 마치 stack과 비슷하게 작동
 
 
-def recursive_function(i):
-    if i == 10:
-        return
-    print(i, '번째 재귀함수에서', i + 1, '번째 재귀함수를 호출 합니다')
-    recursive_function(i + 1)
-    print(i, '번째 재귀함수를 종료합니다')
+# def recursive_function(i):
+#     if i == 10:
+#         return
+#     print(i, '번째 재귀함수에서', i + 1, '번째 재귀함수를 호출 합니다')
+#     recursive_function(i + 1)
+#     print(i, '번째 재귀함수를 종료합니다')
 
 
-recursive_function(1)
+# recursive_function(1)
 
 
 # 팩토리얼 구현 예제

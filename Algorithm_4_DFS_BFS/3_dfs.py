@@ -21,6 +21,7 @@ graph = [
 # 노드가 방문한 정보를 표현 아직 방문 전이기 때문에 모두 False로 표현
 visited = [False] * 9
 
+
 # print(visited)
 # 메서드 정의
 
@@ -41,4 +42,4 @@ def dfs(graph, v, visited):
             dfs(graph, i, visited)
 
 
-dfs(graph,1, visited)
+dfs(graph, 1, visited)
