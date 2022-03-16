@@ -1,5 +1,3 @@
-# 정렬 예제 3
-
 # 백준 2751번
 # 첫째 줄에 수의 갯수 (1<= n <=1000), 둘째 줄 부터는 숫자가 주어진다
 # 이 수들은 절대값이 1,000,000보다 작거나 같다. 중복은 없다
@@ -12,11 +10,6 @@ arr = list()
 
 for v in range(num):
     arr.append(int(sys.stdin.readline().strip()))
-4
-1
-3
-7
-2
 
 # 1) 선택 정렬
 # def select_sort(arr):
