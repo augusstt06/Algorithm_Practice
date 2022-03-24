@@ -1,4 +1,4 @@
-# 백준 1012번
+# 백준 7576번
 from collections import deque
 
 n, m = map(int, input().split())
