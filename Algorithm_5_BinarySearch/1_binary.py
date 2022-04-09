@@ -26,9 +26,9 @@ def binary(arr, num):
             start = mid + 1
     return None
 
-arr = [0,2,4,6,8,10,12,14,16,18]
+arr = [0,2,4,6,8,10,10,12,14,16,18]
 
-# binary(arr, 10)
+binary(arr, 10)
 
 # 재귀함수를 사용한 구현
 def binary_re(arr, num, start, end):
